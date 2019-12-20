@@ -76,14 +76,14 @@ const allInput = document.querySelectorAll('INPUT');
 allInput.forEach((e, i) => {
 	e.oninput = event => {
 		if (event.target.value === e.className) {
-			e.style.color = 'green';
+			e.style.color = 'forestgreen';
 		} else {
-			e.style.color = 'red';
+			e.style.color = 'firebrick';
 		}
 
 		const result = check();
 		if (result) {
-			document.body.style.background = 'green';
+			document.getElementById('title').innerHTML = 'Bravo !';
 		}
 	};
 });
@@ -91,7 +91,7 @@ allInput.forEach((e, i) => {
 function check() {
 	var inputArray = Array.prototype.slice.call(allInput);
 	const checkAll = inputArray.filter(item => {
-		return item.style.color === 'green';
+		return item.style.color === 'forestgreen';
 	});
 	if (checkAll.length === inputArray.length) {
 		return true;
@@ -99,3 +99,7 @@ function check() {
 		return false;
 	}
 }
+
+document.getElementById('restart').addEventListener('click', () => {
+	location.reload();
+});
