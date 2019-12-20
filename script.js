@@ -1,3 +1,6 @@
+var divNumber = ['1', '2', '3', '4', '5', '6', '7', '8', '9'],
+	number = [...divNumber];
+
 function shuffle(array) {
 	var currentIndex = array.length,
 		temporaryValue,
@@ -15,12 +18,9 @@ function shuffle(array) {
 	return array;
 }
 
-var divNumber = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
-var number = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
-
-number = shuffle(number);
-
+// Fill in the boxes random number
 function fill() {
+	number = shuffle(number);
 	number.map((num, i) => {
 		const a = document.getElementsByClassName(divNumber[i]);
 		for (var r = 0; r < a.length; r++) {
@@ -30,27 +30,30 @@ function fill() {
 }
 fill();
 
-const origine = [];
-
+// Hide some numbers randomly
 function hide() {
-	const p = document.getElementsByTagName('p');
+	var origine = '',
+		p = document.getElementsByTagName('p');
 
 	for (var j = 0; j < p.length; j++) {
 		const num = Math.floor(Math.random() * Math.floor(2));
 		if (num !== 0) {
 			p[j].style.display = 'none';
-			origine.push(p[j].innerHTML);
+			origine = p[j].innerHTML;
 			var x1 = document.createElement('INPUT');
 			x1.setAttribute('type', 'text');
 			x1.setAttribute('maxlength', 1);
 			x1.setAttribute('onkeypress', 'validate(event)');
 
 			onkeypress = 'validate(event)';
-			x1.classList.add(p[j].innerHTML);
+			x1.classList.add(origine);
 			p[j].parentNode.insertBefore(x1, p[j]);
 		}
 	}
 }
+hide();
+
+// Input validation
 function validate(evt) {
 	var theEvent = evt || window.event;
 
@@ -69,8 +72,7 @@ function validate(evt) {
 	}
 }
 
-hide();
-
+// Check the input value
 const allInput = document.querySelectorAll('INPUT');
 
 allInput.forEach((e, i) => {
@@ -100,6 +102,8 @@ function check() {
 	}
 }
 
+// Restart
 document.getElementById('restart').addEventListener('click', () => {
-	location.reload();
+	// location.reload();
+	history.go(0);
 });

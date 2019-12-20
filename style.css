@@ -30,6 +30,14 @@ button:hover {
 	background: #fad390;
 	color: #079992;
 }
+input {
+	height: 20px;
+	width: 20px;
+	background: none;
+	border: none;
+	text-align: center;
+	font-size: 15px;
+}
 .container {
 	margin-top: 50px;
 	height: 315px;
@@ -66,13 +74,4 @@ button:hover {
 .line div:nth-child(3),
 .line div:nth-child(6) {
 	border-right-color: #0c2461;
-}
-
-input {
-	height: 20px;
-	width: 20px;
-	background: none;
-	border: none;
-	text-align: center;
-	font-size: 15px;
 }
