@@ -14,6 +14,11 @@ footer {
 	font-size: 15px;
 	font-family: 'Courier New', Courier, monospace;
 	font-weight: 100;
+	display: flex;
+	align-items: center;
+}
+img {
+	height: 15px;
 }
 h1 {
 	margin: 40px;
@@ -82,7 +87,6 @@ input {
 .line div:nth-child(6) {
 	border-right-color: #0c2461c5;
 }
-
 
 button::before {
 	content: "Sudoku puzzles require you to find the missing numbers in a 9 by 9 grid, with that grid itself divided into 9 square grids of 3 by 3.  \A You can't just add any numbers, though. There are rules that making solving the puzzle challenging.";
