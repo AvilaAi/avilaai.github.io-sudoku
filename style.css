@@ -1,7 +1,5 @@
-* {
-	font-family: 'Comic Sans MS', cursive;
-}
 body {
+	font-family: 'Comic Sans MS', cursive;
 	background: radial-gradient(ellipse at center, #3c6382 0%, #0a3d62 100%);
 	display: flex;
 	flex-direction: column;
@@ -9,8 +7,17 @@ body {
 	height: 100vh;
 	width: 100%;
 }
+footer {
+	position: absolute;
+	bottom: 0%;
+	color: #151c30;
+	font-size: 15px;
+	font-family: 'Courier New', Courier, monospace;
+	font-weight: 100;
+}
 h1 {
 	margin: 40px;
+	margin-top: 30px;
 	color: #f8c291;
 	text-shadow: 0 0 5px #82ccdd;
 	font-size: 50px;
@@ -28,7 +35,7 @@ button {
 
 button:hover {
 	background: #fad390;
-	color: #079992;
+	color: #079992c7;
 }
 input {
 	height: 20px;
@@ -43,7 +50,7 @@ input {
 	height: 315px;
 	width: 315px;
 	border: 1px solid #0c2461;
-	background: #f1e5ce;
+	background: #f1e5cef1;
 	display: flex;
 	flex-direction: column;
 	transform: scale(1.3);
@@ -57,7 +64,7 @@ input {
 }
 
 .line div {
-	border: 0.01em solid #82ccdd;
+	border: 0.01em solid #82ccddd3;
 	width: 35px;
 	position: relative;
 	display: flex;
@@ -73,5 +80,44 @@ input {
 
 .line div:nth-child(3),
 .line div:nth-child(6) {
-	border-right-color: #0c2461;
+	border-right-color: #0c2461c5;
+}
+
+/* .rules{
+	position:absolute;
+} */
+
+button::before {
+	content: "Sudoku puzzles require you to find the missing numbers in a 9 by 9 grid, with that grid itself divided into 9 square grids of 3 by 3.  \A You can't just add any numbers, though. There are rules that making solving the puzzle challenging.";
+	color: rgba(255, 255, 255, 0.719);
+	position: absolute;
+	display: block;
+	/* white-space: pre; */
+	width: 220px;
+	height: 100px;
+	top: 35%;
+	left: 12%;
+	text-align: left;
+	overflow-wrap: break-word;
+	font-size: 15px;
+	font-family: 'Courier New', Courier, monospace;
+	font-weight: 100;
+	line-height: 2;
+}
+button::after {
+	content: 'A number can only occur once in a row, column, or square. To solve a Sudoku, look for open spaces where its row, column and square alreay have enough other numbers filled in to tell you the correct value. The more squares you fill in, the easier the puzzle is to finish.';
+	color: rgba(255, 255, 255, 0.719);
+	position: absolute;
+	display: block;
+	width: 220px;
+	height: 100px;
+	top: 33%;
+	right: 10%;
+	text-align: left;
+	overflow-wrap: break-word;
+	font-size: 15px;
+	font-family: 'Courier New', Courier, monospace;
+
+	font-weight: 100;
+	line-height: 2;
 }
