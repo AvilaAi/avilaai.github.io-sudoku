@@ -2,4 +2,4 @@
 
 a simple sudoku 
 
-https://a-simple-sudoku.herokuapp.com/
+https://avilaai.github.io/sudoku/
