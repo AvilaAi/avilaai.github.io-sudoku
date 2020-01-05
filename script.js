@@ -77,6 +77,7 @@ const allInput = document.querySelectorAll('INPUT');
 
 allInput.forEach((e, i) => {
 	e.oninput = event => {
+		e.style.fontFamily = 'Comic Sans MS';
 		if (event.target.value === e.className) {
 			e.style.color = 'forestgreen';
 		} else {
